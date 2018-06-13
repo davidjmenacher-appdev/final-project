@@ -1,0 +1,140 @@
+<h1>
+  All companies
+</h1>
+
+<a href="/companies/new">
+  Add a new company
+</a>
+
+<hr>
+
+<table class="table">
+  <tr>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Url
+    </th>
+
+    <th>
+      Description
+    </th>
+
+    <th>
+      Total funding
+    </th>
+
+    <th>
+      Sector
+    </th>
+
+    <th>
+      Industry
+    </th>
+
+    <th>
+      Sub industry
+    </th>
+
+    <th>
+      Country
+    </th>
+
+    <th>
+      State
+    </th>
+
+    <th>
+      City
+    </th>
+
+    <th>
+      Vc backed
+    </th>
+
+    <th>
+      Last funding round
+    </th>
+
+    <th>
+      Last funding date
+    </th>
+
+    <th>
+      Last funding amount
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @companies.each do |company| %>
+  <tr>
+
+    <td>
+      <%= company.name %>
+    </td>
+
+    <td>
+      <%= company.URL %>
+    </td>
+
+    <td>
+      <%= company.description %>
+    </td>
+
+    <td>
+      <%= company.total_funding %>
+    </td>
+
+    <td>
+      <%= company.sector %>
+    </td>
+
+    <td>
+      <%= company.industry %>
+    </td>
+
+    <td>
+      <%= company.sub_industry %>
+    </td>
+
+    <td>
+      <%= company.country %>
+    </td>
+
+    <td>
+      <%= company.state %>
+    </td>
+
+    <td>
+      <%= company.city %>
+    </td>
+
+    <td>
+      <%= company.vc_backed %>
+    </td>
+
+    <td>
+      <%= company.last_funding_round %>
+    </td>
+
+    <td>
+      <%= company.last_funding_date %>
+    </td>
+
+    <td>
+      <%= company.last_funding_amount %>
+    </td>
+
+    <td>
+      <a href="/companies/<%= company.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

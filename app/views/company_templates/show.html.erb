@@ -1,0 +1,133 @@
+<h1>
+  Company #<%= @company.id %> details
+</h1>
+
+<a href="/companies/<%= @company.id %>/edit">
+  Edit company
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @company.name %>
+  </dd>
+
+  <dt>
+    Url
+  </dt>
+  <dd>
+    <%= @company.URL %>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%= @company.description %>
+  </dd>
+
+  <dt>
+    Total funding
+  </dt>
+  <dd>
+    <%= @company.total_funding %>
+  </dd>
+
+  <dt>
+    Sector
+  </dt>
+  <dd>
+    <%= @company.sector %>
+  </dd>
+
+  <dt>
+    Industry
+  </dt>
+  <dd>
+    <%= @company.industry %>
+  </dd>
+
+  <dt>
+    Sub industry
+  </dt>
+  <dd>
+    <%= @company.sub_industry %>
+  </dd>
+
+  <dt>
+    Country
+  </dt>
+  <dd>
+    <%= @company.country %>
+  </dd>
+
+  <dt>
+    State
+  </dt>
+  <dd>
+    <%= @company.state %>
+  </dd>
+
+  <dt>
+    City
+  </dt>
+  <dd>
+    <%= @company.city %>
+  </dd>
+
+  <dt>
+    Vc backed
+  </dt>
+  <dd>
+    <%= @company.vc_backed %>
+  </dd>
+
+  <dt>
+    Last funding round
+  </dt>
+  <dd>
+    <%= @company.last_funding_round %>
+  </dd>
+
+  <dt>
+    Last funding date
+  </dt>
+  <dd>
+    <%= @company.last_funding_date %>
+  </dd>
+
+  <dt>
+    Last funding amount
+  </dt>
+  <dd>
+    <%= @company.last_funding_amount %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@company.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@company.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_company/<%= @company.id %>">
+  Delete company
+</a>
+
+<hr>
+
+<a href="/companies">
+  Go back
+</a>

@@ -1,0 +1,152 @@
+<!-- Validation failure messages -->
+<% if @company.errors.any? %>
+  <% @company.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit company #<%= @company.id %>
+</h1>
+
+<hr>
+
+<form action="/update_company/<%= @company.id %>" method="post">
+  <!-- Label and input for name -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @company.name %>">
+  </div>
+
+  <!-- Label and input for URL -->
+  <div class="form-group">
+    <label for="URL">
+      Url
+    </label>
+
+    <input type="text" id="URL" name="URL" class="form-control" value="<%= @company.URL %>">
+  </div>
+
+  <!-- Label and input for description -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @company.description %>">
+  </div>
+
+  <!-- Label and input for total_funding -->
+  <div class="form-group">
+    <label for="total_funding">
+      Total funding
+    </label>
+
+    <input type="text" id="total_funding" name="total_funding" class="form-control" value="<%= @company.total_funding %>">
+  </div>
+
+  <!-- Label and input for sector -->
+  <div class="form-group">
+    <label for="sector">
+      Sector
+    </label>
+
+    <input type="text" id="sector" name="sector" class="form-control" value="<%= @company.sector %>">
+  </div>
+
+  <!-- Label and input for industry -->
+  <div class="form-group">
+    <label for="industry">
+      Industry
+    </label>
+
+    <input type="text" id="industry" name="industry" class="form-control" value="<%= @company.industry %>">
+  </div>
+
+  <!-- Label and input for sub_industry -->
+  <div class="form-group">
+    <label for="sub_industry">
+      Sub industry
+    </label>
+
+    <input type="text" id="sub_industry" name="sub_industry" class="form-control" value="<%= @company.sub_industry %>">
+  </div>
+
+  <!-- Label and input for country -->
+  <div class="form-group">
+    <label for="country">
+      Country
+    </label>
+
+    <input type="text" id="country" name="country" class="form-control" value="<%= @company.country %>">
+  </div>
+
+  <!-- Label and input for state -->
+  <div class="form-group">
+    <label for="state">
+      State
+    </label>
+
+    <input type="text" id="state" name="state" class="form-control" value="<%= @company.state %>">
+  </div>
+
+  <!-- Label and input for city -->
+  <div class="form-group">
+    <label for="city">
+      City
+    </label>
+
+    <input type="text" id="city" name="city" class="form-control" value="<%= @company.city %>">
+  </div>
+
+  <!-- Label and input for vc_backed -->
+  <div class="form-group">
+    <label for="vc_backed">
+      Vc backed
+    </label>
+
+    <input type="text" id="vc_backed" name="vc_backed" class="form-control" value="<%= @company.vc_backed %>">
+  </div>
+
+  <!-- Label and input for last_funding_round -->
+  <div class="form-group">
+    <label for="last_funding_round">
+      Last funding round
+    </label>
+
+    <input type="text" id="last_funding_round" name="last_funding_round" class="form-control" value="<%= @company.last_funding_round %>">
+  </div>
+
+  <!-- Label and input for last_funding_date -->
+  <div class="form-group">
+    <label for="last_funding_date">
+      Last funding date
+    </label>
+
+    <input type="text" id="last_funding_date" name="last_funding_date" class="form-control" value="<%= @company.last_funding_date %>">
+  </div>
+
+  <!-- Label and input for last_funding_amount -->
+  <div class="form-group">
+    <label for="last_funding_amount">
+      Last funding amount
+    </label>
+
+    <input type="text" id="last_funding_amount" name="last_funding_amount" class="form-control" value="<%= @company.last_funding_amount %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update company
+  </button>
+</form>
+
+<hr>
+
+<a href="/companies">
+  Go back
+</a>
