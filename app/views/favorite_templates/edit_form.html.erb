@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @favorite.errors.any? %>
+  <% @favorite.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit favorite #<%= @favorite.id %>
+</h1>
+
+<hr>
+
+<form action="/update_favorite/<%= @favorite.id %>" method="post">
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @favorite.user_id %>">
+  </div>
+
+  <!-- Label and input for company_id -->
+  <div class="form-group">
+    <label for="company_id">
+      Company
+    </label>
+
+    <input type="text" id="company_id" name="company_id" class="form-control" value="<%= @favorite.company_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update favorite
+  </button>
+</form>
+
+<hr>
+
+<a href="/favorites">
+  Go back
+</a>
