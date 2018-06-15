@@ -1,19 +1,5 @@
-<head>
+<% @companies.each do |company| %>
 
-</head>
-
-<body>
-  <h1 color="blue">
-    All Startups
-  </h1>
-  
-  <a href="/companies/new">
-    Add a new company
-  </a>
-  
-  <hr>
-    
-    <% @companies.each do |company| %>
       
       <% @list_of_users = company.users %>
       <% @user_count = 0 %>
@@ -22,20 +8,10 @@
           <% @user_count = @user_count + 1 %>
         <% end %>
       <% end %>
-      
-      <% @list_of_favorites = company.favorites %>
-      <% @list_of_favorites.each do |favorite| %>
-        <% if favorite.user_id == current_user.id %>
-          <% @favorite_id = favorite.id %>
-        <% end %>
-      <% end %>
+    
         
-
-      <% if @user_count > 0 %>
-        <div class="card border-success mb-3" style="max-width: 35rem;">
-      <% else %>
-        <div class="card border-light mb-3" style="max-width: 35rem;">
-      <% end %>
+    <% if @user_count > 0 %>
+      <div class="card border-success mb-3" style="max-width: 35rem;">
         <div class="card-header">
             <h2 align="center">
               <%= company.name %>
@@ -69,7 +45,5 @@
         </div>
       </div>
       
-  
-    <% end %>
-  
-</body>
+  <% end %>
+<% end %>

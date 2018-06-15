@@ -24,4 +24,7 @@
 class Company < ApplicationRecord
     validates :name, :URL, :sector, :industry, :state, :city, presence: true
     validates :URL, uniqueness: true
+    
+    has_many :favorites
+    has_many :users, through: :favorites
 end

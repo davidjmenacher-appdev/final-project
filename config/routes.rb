@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   # CREATE
   get("/favorites/new", { :controller => "favorites", :action => "new_form" })
   post("/create_favorite", { :controller => "favorites", :action => "create_row" })
+  get("/create_favorite/:company_id/:user_id", { :controller => "favorites", :action => "create_row" })
 
   # READ
   get("/favorites", { :controller => "favorites", :action => "index" })
   get("/favorites/:id_to_display", { :controller => "favorites", :action => "show" })
+  get("/my_favorites", { :controller => "favorites", :action => "my_favorites"})
 
   # UPDATE
   get("/favorites/:prefill_with_id/edit", { :controller => "favorites", :action => "edit_form" })
@@ -42,6 +44,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  root 'home#home'
+  root 'companies#index'
   
 end

@@ -4,6 +4,13 @@ class FavoritesController < ApplicationController
 
     render("favorite_templates/index.html.erb")
   end
+  
+  def my_favorites
+    @companies = Company.all
+    @favorites = Favorite.all
+    
+    render("favorite_templates/my_favorites.html.erb")
+  end
 
   def show
     @favorite = Favorite.find(params.fetch("id_to_display"))
@@ -24,7 +31,7 @@ class FavoritesController < ApplicationController
     if @favorite.valid?
       @favorite.save
 
-      redirect_to("/favorites", :notice => "Favorite created successfully.")
+      redirect_to("/companies", :notice => "Favorite created successfully.")
     else
       render("favorite_templates/new_form.html.erb")
     end
@@ -56,6 +63,6 @@ class FavoritesController < ApplicationController
 
     @favorite.destroy
 
-    redirect_to("/favorites", :notice => "Favorite deleted successfully.")
+    redirect_to("/companies", :notice => "Favorite deleted successfully.")
   end
 end

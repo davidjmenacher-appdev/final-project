@@ -1,5 +1,5 @@
 <h1>
-  Company #<%= @company.id %> details
+  <%= @company.name %> - Company Details
 </h1>
 
 <a href="/companies/<%= @company.id %>/edit">
@@ -9,18 +9,9 @@
 <hr>
 
 <dl>
-  <dt>
-    Name
-  </dt>
-  <dd>
-    <%= @company.name %>
-  </dd>
 
-  <dt>
-    Url
-  </dt>
   <dd>
-    <%= @company.URL %>
+    <a href="<%= @company.URL %>" target="_blank"><%= @company.URL %></a>
   </dd>
 
   <dt>
@@ -34,7 +25,7 @@
     Total funding
   </dt>
   <dd>
-    <%= @company.total_funding %>
+    $<%= @company.total_funding %>M
   </dd>
 
   <dt>
@@ -104,22 +95,9 @@
     Last funding amount
   </dt>
   <dd>
-    <%= @company.last_funding_amount %>
+    $<%= @company.last_funding_amount %>M
   </dd>
 
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@company.created_at) %> ago
-  </dd>
-
-  <dt>
-    Updated at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@company.updated_at) %> ago
-  </dd>
 </dl>
 
 <a href="/delete_company/<%= @company.id %>">
